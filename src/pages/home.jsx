@@ -7,14 +7,19 @@ import Header from "../components/Header";
 import Footer from "../components/footer/Footer";
 
 // Home content
+import ProjectList from "../components/projects/ProjectList";
+import Services from "../components/homeComponents/about/Services";
 import Information from "../components/homeComponents/Information";
 import DescriptionSection from "../components/homeComponents/DescriptionSection";
 import BeforeFooter from "../components/homeComponents/BeforeFooter";
+import ExpertList from "../components/homeComponents/experts/ExpertList";
+import Testimonials from "../components/homeComponents/testimonials/Testimonials";
 
 // Page style
 import "../styles/home.css"
 import StyledButton from "../components/Button";
 import img from "../assets/logo.png"
+
 
 const Home = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:990px)");
@@ -53,7 +58,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="main-1">
+          {/* <div className="main-1">
             <div className="box-1 pt-5 rounded">
               <Typography 
                 textAlign={"start"}
@@ -114,7 +119,11 @@ const Home = () => {
               </Typography>
               </div>
             </div>
-          </div>
+          </div> */}
+
+          <ProjectList />
+          
+          <Services />
 
           <Information />
 
@@ -122,9 +131,17 @@ const Home = () => {
 
           <BeforeFooter />
 
-          <aside>
+          <aside className="mt-5">
             <img src={img} alt="" width={70} height={70}/>
           </aside>
+
+          <ExpertList />
+
+          <aside className="mt-5">
+            <img src={img} alt="" width={70} height={70}/>
+          </aside>
+
+          <Testimonials />
 
         </div>
         <Footer />
